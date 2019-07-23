@@ -25,6 +25,7 @@ public:
     void sell(long num, double price);
     void update(double price);
     void show();
+    const  Stock10 & topval(const Stock10 & s) const ;
 
 };
 

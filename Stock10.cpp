@@ -70,3 +70,13 @@ void Stock10::show() {
     cout.setf(orig, ios_base::floatfield);
     cout.precision(prec);
 }
+
+const  Stock10& Stock10::topval(const Stock10 &s) const {
+    if(s.total_val > total_val){
+        return s;
+    } else {
+        return *this;
+    }
+}
+
+
