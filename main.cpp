@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Stock10.h"
+#include "MyTime.h"
 
 int main() {
 
@@ -24,23 +25,34 @@ int main() {
 //        stock1.show();
 //        cout << "Done\n";
 //    }
-    Stock10 stock10[4] = {
-            Stock10("NanoSmart",12,20.0),
-            Stock10("Boffo Objects",200,2.0),
-            Stock10("Monolithic Obelisks",130,3.25),
-            Stock10("Fleep Enterprise",60,6.5)
-    };
 
-    std::cout << "Stock holding:\n";
-    int st;
-    for (int st = 0; st < 4; st++) {
-        stock10[st].show();
-    }
-    const  Stock10 *top = &stock10[0];
-    for (int st = 1; st < 4; st++) {
-        top = &top->topval(stock10[st]);
-        std::cout << "\nMost valuable holding:\n";
-    }
+//    enum class egg {S,M,L};
+//    egg choice = egg ::S;
+//    std::cout << "这是枚举:" << int(choice);
+    using std::cout;
+    using std::endl;
+    MyTime planning;
+    MyTime coding(2,40);
+    MyTime fixing(5,55);
+    MyTime total;
+
+    cout << "Planning time = ";
+    planning.Show();
+    cout << endl;
+
+    cout << "Coding time = ";
+    coding.Show();
+    cout << endl;
+
+    cout << "Fixing time = ";
+    fixing.Show();
+    cout << endl;
+
+    total = coding.Sum(fixing);
+    cout << "Total time = ";
+    total.Show();
+    cout << endl;
+
     return 0;
 }
 
